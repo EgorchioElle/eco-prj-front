@@ -1,0 +1,22 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // двоеточие в конце
+    "semi": "warn",
+    // предпочтительно использовать одиночные кавычки
+    "quotes": ["warn", "single"],
+    // предпочтительно использовать двойные кавычки в jsx
+    "jsx-quotes": ["warn", "prefer-double"],
+    // при возможности лучше использовать константы
+    "prefer-const": "warn",
+    // предупреждение о нарушении правил использования хуков выключено
+    "react-hooks/rules-of-hooks": "off",
+    // последовательность импортов
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+      // пространство между группами импортов
+      "newlines-between": "always-and-inside-groups"
+    }]
+  }
+}
+
