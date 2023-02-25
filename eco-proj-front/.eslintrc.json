@@ -11,6 +11,8 @@
     "prefer-const": "warn",
     // предупреждение о нарушении правил использования хуков выключено
     "react-hooks/rules-of-hooks": "off",
+    // предупреждение о использовании консоли, не нужно, чтобы пользователь увидел что-то лишнее)
+    "no-console": "warn",
     // последовательность импортов
     "import/order": ["error", {
       "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],

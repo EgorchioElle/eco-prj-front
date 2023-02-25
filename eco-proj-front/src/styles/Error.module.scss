@@ -1,0 +1,35 @@
+.main{
+  @apply bg-black w-full h-screen;
+}
+  .svg {
+    @apply absolute top-1/2 left-1/2 -mt-60 -ml-96;
+  }
+  
+  .message {
+    @apply h-48 absolute animate-fade-in top-1/2 left-2/3 p-6 -mt-24 -ml-24 shadow-lg border border-gray-500 bg-primary-500 text-xl mb-10 text-gray-200 tracking-wider;
+  }
+
+  .Polygon_1 {
+    @apply animate-float-0; 
+  }
+  .Polygon_2 {
+    @apply animate-float-2; 
+  }
+  .Polygon_3 {
+    @apply animate-float-4; 
+  }
+  .Polygon_4 {
+    @apply animate-float-6; 
+  }
+  .Polygon_5 {
+    @apply animate-float-8; 
+  }
+
+  @media (max-width: 768px) {
+    .svg {
+      @apply absolute top-1/2 left-1/2 -mt-64 -ml-44;
+    }
+    .message {
+      @apply absolute top-1/2 left-1/2 -mt-24 -ml-44;
+    }
+  }

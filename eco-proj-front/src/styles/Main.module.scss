@@ -1,0 +1,104 @@
+.main{
+    @apply w-full h-screen bg-main-100
+    flex justify-center text-center bg-cover;
+    background-image: url('https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+}
+
+.title{
+    @apply text-xl text-white;
+}
+
+.subtitle{
+    @apply text-gray-300 text-sm w-3/4;
+}
+
+.content{
+    @apply max-w-xl w-4/5 py-10 grid grid-rows-3 grid-cols-2 gap-5;
+}
+
+.item{
+    @apply rounded-3xl flex flex-col items-center justify-center text-white tracking-wide transition-all bg-main-200 opacity-80;
+}
+
+
+.item:not(:nth-child(2)){
+    @apply hover:brightness-125;
+}
+
+// Блок с профилем
+
+.avatar{
+    @apply rounded-full bg-primary-200 w-32 h-32 flex justify-center items-center text-3xl mb-2;
+}
+
+.item:nth-child(3){
+    @apply col-span-2;
+}
+
+// Блок с транзакциями
+
+.transactions-lines{
+    @apply mt-6 w-1/2 flex;
+}
+
+.transactions-lines span{
+    @apply h-3;
+}
+
+.transactions-lines span:first-child{
+    @apply rounded-l-full;
+}
+
+.transactions-lines span:last-child{
+    @apply rounded-r-full;
+}
+
+// категории операций
+
+.food{
+    @apply bg-purple-400;
+}
+
+.transport{
+    @apply bg-yellow-300;
+}
+
+.fastFood{
+    @apply bg-purple-400;
+}
+
+.transport{
+    @apply bg-yellow-300;
+}
+
+.other{
+    @apply bg-blue-400;
+}
+
+.translations{
+    @apply bg-lime-400;
+}
+
+.supermarkets{
+    @apply bg-orange-400;
+}
+
+.clothes{
+    @apply bg-teal-400;
+}
+
+.icon{
+    @apply w-1/4 mb-3;
+}
+
+// Если пользователь не авторизирован
+
+.not-auth__content{
+    @apply px-20 w-full flex flex-col justify-center items-center bg-main-200 opacity-80;
+}
+
+
+
+
+
+

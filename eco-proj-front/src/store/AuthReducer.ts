@@ -1,20 +1,16 @@
-import { authStateType } from '@/types';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-const { createSlice } = require('@reduxjs/toolkit');
-
-const initialState: authStateType = {
-  isAuth: false,
-};
+const initialState: boolean = true;
 
 const AuthSlice = createSlice({
-  name: 'AuthReducer',
+  name: 'auth',
   initialState,
   reducers: {
-    test: (state: authStateType) => {
-      console.log(state.isAuth);
+    setIsAuth: (state, action: PayloadAction<boolean>) => {
+      state = action.payload;
     },
   },
 });
 
 export default AuthSlice.reducer;
-export const { test } = AuthSlice.actions;
+export const { setIsAuth } = AuthSlice.actions;

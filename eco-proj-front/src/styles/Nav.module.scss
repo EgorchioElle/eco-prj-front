@@ -1,0 +1,8 @@
+.nav{
+    @apply w-full h-6vh bg-white flex items-center justify-around absolute;
+}
+
+.link {
+    @apply text-black no-underline text-sm tracking-wide border-b-2 border-b-white transition-all
+    hover:border-b-primary-100 hover:text-primary-100 hover:opacity-80;
+}

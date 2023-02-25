@@ -1,14 +1,7 @@
+import { FC } from 'react';
 import Head from 'next/head';
 
-import React, { FC } from 'react';
-import { useDispatch } from 'react-redux';
-
-import { test } from '@/store/AuthReducer';
-
-const login: FC = () => {
-    // удалите при необходимости
-    const dispatch = useDispatch();
-
+const payments: FC = () => {
     return (
         <>
             <Head>
@@ -18,10 +11,10 @@ const login: FC = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <p onClick={() => dispatch(test())}>Login</p>
+                payments
             </main>
         </>
     );
 };
 
-export default login;
+export default payments;

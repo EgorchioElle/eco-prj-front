@@ -8,10 +8,12 @@ import { store } from '@/store';
 import type { AppProps } from 'next/app';
 
 
+import '../styles/globals.scss';
+
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Provider>
   );
 };

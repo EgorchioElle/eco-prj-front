@@ -1,0 +1,33 @@
+.main {
+    @apply w-full h-screen bg-gradient-to-br from-primary-300 to-primary-400 flex items-center justify-center;
+}
+
+.login {
+    @apply w-96 p-10 bg-white shadow-md animate-fade-in;
+  }
+  
+  .login h2 {
+    @apply mb-7 text-center text-lg font-semibold tracking-wide;
+  }
+  
+  .login .box {
+    @apply relative;
+  }
+  
+  .login .box input {
+    @apply w-full py-2 mb-7 border-b border-b-black outline-none transition-all
+    focus:border-b-primary-100;
+  }
+  .login .box label {
+    @apply absolute py-2 top-0 left-0 text-black transition-all pointer-events-none;
+  }
+  
+  .login .box input:focus ~ label,
+  .login .box input:valid ~ label {
+    @apply -top-5 left-0 text-primary-100 text-xs;
+  }
+
+.submit{
+    @apply text-lg tracking-wide px-5 py-1 bg-primary-100 text-white transition-all
+    hover:opacity-80;
+}
