@@ -20,6 +20,7 @@ module.exports = {
         "footer-text": "#616161",
         "main-100": "#11100f",
         "main-200": "#21201f",
+        "home": "#dae9f0",
       },
       transitionDuration: {
         DEFAULT: "400ms",
@@ -44,14 +45,23 @@ module.exports = {
             transform: 'translateY(20px)',
           },
         },
+        descent: {
+          from: {
+            top: '-50px',
+          },
+          to: {
+            top: '80px',
+          },
+        },
       },
       animation: {
-        "fade-in": "fade 1s ease-in-out",
+        'fade-in': "fade 1s ease-in-out",
         'float-0': "float 3s infinite ease-in-out alternate",
         'float-2': "float 3s infinite 2s ease-in-out alternate",
         'float-4': "float 3s infinite 4s ease-in-out alternate",
         'float-6': "float 3s infinite 6s ease-in-out alternate",
         'float-8': "float 3s infinite 8s ease-in-out alternate",
+        descent: "descent 1s ease-in-out",
       }
     },
   },

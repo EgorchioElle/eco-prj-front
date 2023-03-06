@@ -1,8 +1,16 @@
 .nav{
-    @apply w-full h-6vh bg-white flex items-center justify-around absolute;
+    @apply w-full h-6vh bg-transparent flex items-center justify-between absolute z-10 text-white;
+}
+
+.logo{
+    @apply text-lg w-2/5 flex justify-center items-center;
+}
+
+.links-container{
+    @apply w-3/5 flex flex-nowrap gap-10 justify-center items-center md:w-2/5;
 }
 
 .link {
-    @apply text-black no-underline text-sm tracking-wide border-b-2 border-b-white transition-all
-    hover:border-b-primary-100 hover:text-primary-100 hover:opacity-80;
+    @apply no-underline text-sm tracking-wide border-b-2 border-b-transparent transition-all
+    hover:border-b-white;
 }

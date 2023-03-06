@@ -28,7 +28,7 @@
 // Блок с профилем
 
 .avatar{
-    @apply rounded-full bg-primary-200 w-32 h-32 flex justify-center items-center text-3xl mb-2;
+    @apply rounded-full w-32 h-32 flex justify-center items-center text-3xl mb-2;
 }
 
 .item:nth-child(3){

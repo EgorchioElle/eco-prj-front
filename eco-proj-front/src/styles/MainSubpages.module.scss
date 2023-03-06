@@ -1,0 +1,104 @@
+.main{
+    @apply w-full h-screen bg-main-100 text-white
+    flex items-center justify-center;
+}
+
+.content{
+    @apply mx-auto w-4/5 max-w-3xl p-4 bg-main-200 rounded-3xl animate-fade-in;
+}
+
+.menu{
+    @apply absolute bg-main-200 p-4 rounded-full top-20 animate-descent transition-all
+    hover:brightness-150;
+}
+
+// profile
+
+.title{
+    @apply text-2xl bg-transparent text-center outline-none transition-all
+    focus:text-purple-300;
+}
+
+.subtitle{
+    @apply text-gray-300 mb-6;
+}
+
+.info{
+    @apply h-full flex items-center justify-around flex-col;
+}
+
+.circles{
+    @apply flex justify-around flex-wrap gap-2;
+}
+
+.circle{
+    @apply rounded-full p-5 mx-2 transition-all brightness-75
+    hover:brightness-150;
+}
+
+.circle_active{
+    @apply brightness-150;
+}
+
+.avatar{
+    @apply rounded-full bg-primary-200 w-40 h-40 flex justify-center items-center text-4xl mb-8 transition-all;
+}
+
+// transactions
+
+.transactions-lines{
+    @apply mb-6 w-1/2 flex ;
+}
+
+.transactions-lines span{
+    @apply h-3;
+}
+
+.transactions-lines span:first-child{
+    @apply rounded-l-full;
+}
+
+.transactions-lines span:last-child{
+    @apply rounded-r-full;
+}
+
+.transactions-categories{
+    @apply flex flex-row justify-center gap-7 w-full flex-wrap;
+}
+
+.food{
+    @apply bg-purple-400;
+}
+
+.transport{
+    @apply bg-yellow-300;
+}
+
+.fastFood{
+    @apply bg-purple-400;
+}
+
+.transport{
+    @apply bg-yellow-300;
+}
+
+.other{
+    @apply bg-blue-400;
+}
+
+.translations{
+    @apply bg-lime-400;
+}
+
+.supermarkets{
+    @apply bg-orange-400;
+}
+
+.clothes{
+    @apply bg-teal-400;
+}
+
+.icon{
+    @apply w-1/4 mb-3;
+}
+

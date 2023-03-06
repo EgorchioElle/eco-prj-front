@@ -8,16 +8,13 @@ import { useSelector } from 'react-redux';
 import lockIcon from '../../svg/lock-icon.svg';
 import paymentsIcon from '../../svg/payments-icon.svg';
 import sberIcon from '../../svg/sberbank-icon.svg';
-import Styles from '../../styles/Main.module.scss';
+import Styles from '../../styles/MainPage.module.scss';
 
 import { courseType } from '@/utils/types';
 import { months } from '@/utils/enums';
 import Valute from '@/components/Valute';
 import { RootState } from '@/store';
-
-
-
-
+import { toInitials } from '@/utils/consts';
 
 interface mainProps {
     course: courseType;
@@ -37,6 +34,11 @@ export const getStaticProps: GetStaticProps = async () => {
 const main: FC<mainProps> = ({ course }) => {
     const { USD, EUR, CNY } = course.Valute || {};
     const isAuth = useSelector((state: RootState) => state.auth);
+    const username = useSelector((state: RootState) => state.username);
+    const userColor = useSelector((state: RootState) => state.userColor);
+    const spendings = useSelector((state: RootState) => state.spendings);
+    let allSpendingsValue: number = 0;
+    spendings.forEach(({ value }) => allSpendingsValue += value);
 
     return isAuth ? (
         <>
@@ -49,9 +51,8 @@ const main: FC<mainProps> = ({ course }) => {
             <main className={Styles.main}>
                 <nav className={Styles.content}>                
                     <Link href="main/profile" className={Styles.item}>
-                        {/* тут надо будет получать аватарку пользователя */}
-                        <h2 className={Styles.avatar}>ES</h2>
-                        <p>Profile</p>
+                        <div style={{backgroundColor: userColor}} className={Styles.avatar}>{toInitials(username)}</div>
+                        <h2>Profile</h2>
                     </Link>
                   
                     <div className={Styles.item}>
@@ -63,12 +64,11 @@ const main: FC<mainProps> = ({ course }) => {
                     <Link href="main/transactions" className={Styles.item}>
                         <h3 className={Styles.title}>Your transactions</h3>
                         <h4 className={Styles.subtitle}>Spending in {months[new Date().getMonth()]}</h4>
-                        <p className={Styles.subtitle}>500₽</p>
+                        <p className={Styles.subtitle}>{allSpendingsValue}₽</p>
                         <div className={Styles['transactions-lines']}>
-                            {/* тут надо будет расчитать для каждой категории процент от всех трат */}
-                            <span style={{width: '60%'}} className={Styles['supermarkets']}></span>
-                            <span style={{width: '15%'}} className={Styles['other']}></span>
-                            <span style={{width: '25%'}} className={Styles['clothes']}></span>
+                            {spendings.map(({ category, value }, index) => {
+                                return <span key={index} style={{ width: value / allSpendingsValue * 100 + '%' }} className={Styles[category]}></span>;
+                            })}
                         </div>
                     </Link>
 
@@ -98,11 +98,11 @@ const main: FC<mainProps> = ({ course }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={Styles.main}>
-                <nav className={Styles['not-auth__content']}>
+                <section className={Styles['not-auth__content']}>
                     <Image priority={true} src={lockIcon} alt="lock, замок, войти"/>
                     <h2 style={{marginBottom: '8px'}} className={Styles.title}>Looks like you are not logged in</h2>
                     <Link className={Styles.subtitle + ' ' + 'transition-all hover:text-primary-200'} href="/log-in">*click me*</Link>
-                </nav>
+                </section>
             </main>
         </>
     );

@@ -1,5 +1,5 @@
 import { routeType } from './utils/types';
-import { LOGIN_ROUTE, SIGNUP_ROUTE } from './utils/consts';
+import { ABOUT_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE } from './utils/consts';
 
 export const publicRoutes: routeType[] = [
   {
@@ -11,5 +11,10 @@ export const publicRoutes: routeType[] = [
     id: 2,
     title: 'Sign Up',
     path: SIGNUP_ROUTE,
+  },
+  {
+    id: 3,
+    title: 'About',
+    path: ABOUT_ROUTE,
   },
 ];

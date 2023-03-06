@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import {valuteType} from '../utils/types';
+import { valuteType } from '../utils/types';
 
 interface valuteProps {
     valute: valuteType;
 }
 
-const Valute: FC<valuteProps> = ({valute}) => {
+const Valute: FC<valuteProps> = ({ valute }) => {
 
     return (
         <>
